@@ -5,7 +5,6 @@
 
 [node name="SwordAbilityContoller" type="Node"]
 script = ExtResource("1_v86m1")
-ability_range = 50.0
 sword_ability = ExtResource("2_t8jb5")
 
 [node name="Timer" type="Timer" parent="."]

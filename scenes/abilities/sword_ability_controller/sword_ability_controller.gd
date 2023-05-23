@@ -1,6 +1,6 @@
 extends Node
 
-@export var ability_range: float = 200
+const ABILITY_RANGE = 200.0
 
 @export var sword_ability: PackedScene
 
@@ -28,6 +28,8 @@ func on_timer_timeout() -> void:
 	var sword_instance = sword_ability.instantiate() as Node2D
 	var enemy_target = enemies[0] as Node2D
 	
-	if (enemy_target.global_position.distance_to(player.global_position) <= ability_range):
+	if (enemy_target.global_position.distance_to(player.global_position) <= ABILITY_RANGE):
 		player.get_parent().add_child(sword_instance)
 		sword_instance.global_position = enemy_target.global_position
+		randomize()
+		sword_instance.rotate(randf_range(0, PI))

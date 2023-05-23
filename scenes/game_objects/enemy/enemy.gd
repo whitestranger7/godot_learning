@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
 
-const SPEED = 75
+const SPEED = 40
+
+
+func _ready() -> void:
+	$Area2D.area_entered.connect(on_area_entered)
 
 
 func _process(_delta: float) -> void:
@@ -15,3 +19,7 @@ func get_player_direction() -> Vector2:
 	if (player_node):
 		return (player_node.global_position - global_position).normalized()
 	return Vector2.ZERO
+
+
+func on_area_entered(area: Area2D) -> void:
+	queue_free()
