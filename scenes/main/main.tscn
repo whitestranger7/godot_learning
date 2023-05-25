@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwvclhfo7xjdn"]
+[gd_scene load_steps=8 format=3 uid="uid://bwvclhfo7xjdn"]
 
 [ext_resource type="PackedScene" uid="uid://cnl24whklx45a" path="res://scenes/game_objects/player/palyer.tscn" id="1_e3lsg"]
 [ext_resource type="TileSet" uid="uid://bf4j1nspvf5eo" path="res://resources/tileset.tres" id="1_jyp7c"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bwcvj7mjg5wxh" path="res://scenes/managers/enemy_manager/enemy_manager.tscn" id="4_11x7d"]
 [ext_resource type="PackedScene" uid="uid://5exhmfcyigjq" path="res://scenes/managers/arena_time_manager/arena_time_manager.tscn" id="5_o73xq"]
 [ext_resource type="PackedScene" uid="uid://ccst0frto76tn" path="res://scenes/ui/arena_timer/arena_timer.tscn" id="6_p3ji6"]
-[ext_resource type="PackedScene" uid="uid://bj5e7v7l3a4t7" path="res://scenes/game_objects/drops/experience_vial/experience_vial.tscn" id="7_cc2gr"]
 
 [node name="Main" type="Node"]
 metadata/_edit_vertical_guides_ = [-90.0]
@@ -30,12 +29,3 @@ position = Vector2(438, 232)
 
 [node name="ArenaTimer" parent="." node_paths=PackedStringArray("time_manager") instance=ExtResource("6_p3ji6")]
 time_manager = NodePath("../ArenaTimeManager")
-
-[node name="ExperienceVial" parent="." instance=ExtResource("7_cc2gr")]
-position = Vector2(269, 237)
-
-[node name="ExperienceVial2" parent="." instance=ExtResource("7_cc2gr")]
-position = Vector2(396, 118)
-
-[node name="ExperienceVial3" parent="." instance=ExtResource("7_cc2gr")]
-position = Vector2(750, 306)
