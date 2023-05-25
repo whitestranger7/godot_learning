@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://qwbfaxa3yb8c"]
+[gd_scene load_steps=8 format=3 uid="uid://qwbfaxa3yb8c"]
 
 [ext_resource type="Texture2D" uid="uid://bvn5iou2u2fwk" path="res://scenes/game_objects/enemy/enemy.png" id="1_rhi1g"]
 [ext_resource type="Script" path="res://scenes/game_objects/enemy/enemy.gd" id="1_ttoa4"]
+[ext_resource type="PackedScene" uid="uid://cewf2ykrxup3u" path="res://scenes/main/components/health_component/health_component.tscn" id="2_xqpal"]
+[ext_resource type="PackedScene" uid="uid://bip2soa2agf4v" path="res://scenes/main/components/drop_component/drop_component.tscn" id="3_l45hp"]
+[ext_resource type="PackedScene" uid="uid://bj5e7v7l3a4t7" path="res://scenes/game_objects/drops/experience_vial/experience_vial.tscn" id="4_11mid"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8y2bp"]
 radius = 13.0
@@ -14,6 +17,13 @@ collision_layer = 8
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_ttoa4")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_xqpal")]
+max_health = 10.0
+
+[node name="DropComponent" parent="." instance=ExtResource("3_l45hp")]
+drops = Array[PackedScene]([ExtResource("4_11mid")])
+drops_chance = Array[float]([0.5])
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

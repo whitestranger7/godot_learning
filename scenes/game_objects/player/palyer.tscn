@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnl24whklx45a"]
+[gd_scene load_steps=7 format=3 uid="uid://cnl24whklx45a"]
 
 [ext_resource type="Script" path="res://scenes/game_objects/player/player.gd" id="1_dmmki"]
 [ext_resource type="Texture2D" uid="uid://x36vmec8q5mu" path="res://scenes/game_objects/player/player.png" id="1_o8hu4"]
 [ext_resource type="PackedScene" uid="uid://b5e40wt8pkubv" path="res://scenes/abilities/sword_ability_controller/sword_ability_controller.tscn" id="2_yosbl"]
+[ext_resource type="PackedScene" uid="uid://cewf2ykrxup3u" path="res://scenes/main/components/health_component/health_component.tscn" id="4_jifey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h0h2b"]
 radius = 15.0
@@ -14,6 +15,8 @@ radius = 5.0
 light_mask = 0
 motion_mode = 1
 script = ExtResource("1_dmmki")
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_jifey")]
 
 [node name="SwordAbilityContoller" parent="." instance=ExtResource("2_yosbl")]
 
